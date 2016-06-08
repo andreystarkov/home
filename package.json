@@ -57,6 +57,7 @@
     "react-dom": "^15.0.2",
     "react-hot-loader": "^3.0.0-beta.2",
     "react-redux": "^4.4.5",
+    "react-toolbox": "^0.16.2",
     "redux": "^3.5.2",
     "s3": "^4.4.0",
     "style-loader": "^0.13.1",
@@ -99,5 +100,19 @@
     "build:debug": "node tools/build",
     "deploy": "node tools/deploy.gh --release",
     "start": "node tools/start"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "less-plugin-csscomb": "0.0.2",
+    "less-plugin-csswring": "0.0.1",
+    "less-plugin-glob": "^1.1.1"
   }
 }
