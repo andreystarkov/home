@@ -1,8 +1,68 @@
+  .quickly-logo {
+      width:100%;
+      position:relative;
+  }
 
-.logo {
-    width:300px;
-    margin:50px auto;
+  .client-logo-img {
+    margin:0 auto;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center center;
+    border-radius:200px;
+    max-width:190px;
+    max-height:190px;
+    min-height:190px;
+  }
+
+  .row-margin {
+    margin-top:65px;
+    margin-bottom:65px;
+  }
+
+  .client-icon-quickly {
+    max-width:190px;
+    margin: 0 auto;
+  }
+
+  .svg-icon-react {
+    animation: funky 4.5s infinite, rot 220s infinite reverse;
+    path { stroke-width:4px; stroke: fade(#666, 50%);}
+  }
+
+  .quickly-logo {
+        .svg-blue, .fil3 {
+          opacity:0;
+          animation:opacity 2.5s infinite;
+      }
+
+      .svg-green, .fil4 {
+          opacity:0;
+          animation:opacity 3.5s infinite;
+          animation-delay:0.2s;
+      }
+
+      .svg-yellow,.fil5 {
+          opacity:0;
+          animation:opacity 4.5s infinite;
+          animation-delay:0.4s;
+      }
+      .svg-red, .fil6 {
+          opacity:0;
+        animation:opacity 5.5s infinite;
+        animation-delay:0.45s;
+      }
+    .svg-red-angle, .fil2 {
+        opacity:0;
+        animation:opacity 6.5s infinite;
+        animation-delay:0.6s;
+    }
+  }
+
+.client-icon {
+  position:relative;
 }
+
 .svg-blue {
     animation:opacity 5s;
     animation-delay:0.2s;
@@ -69,7 +129,7 @@
 
 @-webkit-keyframes opacity {
   0% {
-    opacity:0;
+    opacity:0.5;
   }
   96%,100% {
     opacity:1;
@@ -78,7 +138,7 @@
 
 @keyframes opacity1 {
   0% {
-    opacity:0;
+    opacity:0.5;
   }
   98%, 100% {
     opacity:1;
@@ -87,7 +147,7 @@
 
 @keyframes opacity {
   0% {
-    opacity:0;
+    opacity:0.5;
     animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
   20% {
@@ -95,7 +155,7 @@
     animation-timing-function: cubic-bezier(1,.26,0,.75);
   }
   40% {
-    opacitity:0.4;
+    opacity:0.4;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
@@ -104,7 +164,7 @@
   }
   100% {
     animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-    opacity:0;
+    opacity:0.5;
   }
 }
 
@@ -131,81 +191,8 @@
     stroke-dashoffset: 41;
   }
 }
+
 @keyframes rot { to { transform: rotate(1turn); } }
-
-section.apps-download {
-  text-align:center;
-  background: #e9e8e5;
-  padding-bottom: 100px;
-}
-section.apps-download h3,
-section.apps-download .secton-title {
-  margin-top: 20px;
-  font-family: 'Fira Sans';
-  font-size: 45px;
-  font-weight: 300;
-  margin-bottom: 50px;
-}
-section.apps-download p {
-font-size: 19px;
-    margin-bottom: 0;
-    font-weight: 300;
-    line-height: 34px;
-    color: #777;
-}
-section.apps-download .app-image {
-  width: 100%;
-  text-align: center;
-  display: table;
-  height: 320px;
-  vertical-align: middle;
-}
-section.apps-download .app-image img {
-  height: 100%;
-}
-section.apps-download {
-  margin-top: 50px;
-}
-section.apps-download .button-app {
-  position: relative;
-  background: #fff24a;
-  color:#000;
-  text-decoration: none;
-  border-bottom: 4px solid #e8d700;
-  border-radius: 4px;
-  display: inline-block;
-  margin: 10px;
-  transition: all 0.
-  padding-top: 100px;4s linear;
-  font-size: 18px;
-  text-align: center;
-  padding-right: 70px;
-  padding: 10px 55px 8px 25px;
-}
-section.apps-download .button-app:hover {
-  background: #fff036;
-
-  border-bottom-color: #e8d700;
-}
-section.apps-download .button-app span {
-  display: table-cell;
-  font-size: 18px;
-  /* text-transform: uppercase; */
-  font-weight: 400;
-  vertical-align: middle;
-}
-section.apps-download .button-app .iapp-icon {
-  position: absolute;
-  right: 17px;
-}
-section.apps-download .button-app .iapp-icon.android {
-  top: 11px;
-  height: 22px;
-}
-section.apps-download .button-app .iapp-icon.ios {
-  top: 8px;
-  height: 23px;
-}
 
 .circle { animation: rot 5s linear infinite; }
 
@@ -216,24 +203,24 @@ circle {
   animation: ani 16s linear infinite reverse, rot 56s infinite;
 }
 
-.logo:hover .circle {
+.quickly-logo:hover .circle {
   animation: rot 8s cubic-bezier(0,1.65,.82,.19) infinite reverse;
 
 }
 
-.logo:hover .the-pat {
+.quickly-logo:hover .the-pat {
   animation: rot 8s cubic-bezier(0,1.65,.82,.19) infinite,  ani 26s ease-in infinite, rot 6s infinite, omg2 7s reverse infinite;
 
 }
 
-.logo:hover circle {
+.quickly-logo:hover circle {
   animation: ani 26s ease-in infinite reverse, rot 6s infinite, omg 10s reverse infinite;
 }
 
 .svg-text {
     transition: transform 0.5s cubic-bezier(0,1.65,.82,.19);
 }
-.logo:hover .svg-text {
+.quickly-logo:hover .svg-text {
   opacity:1;
   animation:  omg 5s;
 }
@@ -252,7 +239,7 @@ circle {
   }
   10% {
     transform: translateX(-50px);
-    cubic-bezier(0,1.65,.82,.19)
+    animation-timing-function: cubic-bezier(0,1.65,.82,.19);
   }
   50% {
     transform: translateX(30px);
@@ -339,28 +326,11 @@ circle {
 
 @keyframes rot { to { transform: rotate(1turn); } }
 
-.logo {
-  position:relative;
-  text-align: center;
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-  position: relative;
-}
-.quickly-logo {
-  z-index: 666;
-    width: 92%;
-    left: 10px;
-    position: absolute;
-    top: 10px;
-}
+
 .back {
-  z-index: 2;
-  top: -6px;
-  left: 2px;
+  z-index: 0;
+  top: 0;
+  left: 0;
   position: absolute;
-  left: 2px;
-    width: 298px;
-    height: 298px;
-    top: -4px;
+  width: 100%;
 }
