@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:04:11
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-22 14:00:20
+* @Last Modified time: 2016-07-22 14:27:06
 */
 
 import React from 'react';
@@ -14,7 +14,7 @@ import Container from 'muicss/lib/react/container';
 
 class Technologies extends React.Component {
   render(){
-      var xs = 6, md = 2, lg = 2;
+      var xs = 4, md = 2, lg = 2;
       return(
           <Container className="the-known">
             <Row>
