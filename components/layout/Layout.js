@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './Header';
 
+import Contact from '../elements/contactForm.js';
 import Portfolio from '../content/portfolio.js';
 import Technologies from '../content/technologies.js';
 
 class SkillsGrid extends React.Component {
   render(){
     return(
-          <div className="container">
-            <h2>Технологии</h2>
+        <div>
             <Technologies />
         </div>
     )
@@ -30,13 +30,15 @@ class Layout extends React.Component {
           <Header />
         </div>
         </section>
-        <section className="skills">
+{/*        <section className="skills">
           <SkillsGrid />
-        </section>
+        </section>*/}
         <section className="works">
           <Portfolio />
         </section>
-
+        <section className="contact">
+          <Contact />
+        </section>
       </div>
     );
   }

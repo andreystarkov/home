@@ -1,8 +1,10 @@
 import React from 'react';
 import Navigation from './Navigation';
 import SVGLogo from '../svg/logo.js';
-
-const {Grid, Row, Col} = require('react-flexbox-grid');
+import Technologies from '../content/technologies.js';
+import Row from 'muicss/lib/react/row';
+import Col from 'muicss/lib/react/col';
+import Container from 'muicss/lib/react/container';
 
 class Header extends React.Component {
 
@@ -10,14 +12,16 @@ class Header extends React.Component {
     return (
       <header className="the-header align-center">
         <div className="container">
-          <div className="the-logo">
-            <SVGLogo />
-          </div>
-
-          <div className="description">
-
-          </div>
-
+          <Row>
+            <Col md="3">
+              <div className="the-logo">
+                <SVGLogo />
+              </div>
+            </Col>
+            <Col md="8">
+              <Technologies />
+            </Col>
+          </Row>
         </div>
       </header>
     );

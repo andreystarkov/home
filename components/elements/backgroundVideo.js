@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 14:49:54
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-06-12 21:23:15
+* @Last Modified time: 2016-07-22 13:46:22
 */
 
 import React from 'react';
@@ -15,6 +15,15 @@ class BackgroundVideo extends React.Component {
     var poster = path+'.jpg';
     return(
     <div className="background-video">
+    <a className="pf-link" href={this.props.link} target="_blank">
+{/*        <div className="links-list">
+          <a href={this.props.link} target="_blank">
+            <i className="fa fa-github" />
+          </a>
+          <a href={this.props.link} target="_blank">
+            <i className="fa fa-play" />
+          </a>
+        </div>*/}
         <div className="video-overlay" style={{backgroundImage: 'url('+poster+')'}}></div>
         <video className="the-video" loop poster={poster}>
           <source src={path+'.m4v'} type='video/mp4; codecs=avc1.42E01E, mp4a.40.2"' />
@@ -22,6 +31,7 @@ class BackgroundVideo extends React.Component {
           <source src={path+'.ogv'} type="video/ogg" />
           <source src={path+'.mp4'} />
         </video>
+    </a>
     </div>
     )
   }
