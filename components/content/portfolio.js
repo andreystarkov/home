@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:01:23
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-22 14:20:05
+* @Last Modified time: 2016-07-22 17:07:37
 */
 import React from 'react';
 import ReactDOM from 'react-dom';

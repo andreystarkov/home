@@ -29,15 +29,4 @@ class Header extends React.Component {
 
 }
 
-/*
-
-          <Grid>
-            <Row>
-              <Col xs={4} md={4}>
-                <h3>Андрей Старков</h3>
-              </Col>
-            </Row>
-          </Grid>
- */
-
 export default Header;

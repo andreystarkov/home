@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 14:49:54
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-22 13:46:22
+* @Last Modified time: 2016-07-22 17:07:10
 */
 
 import React from 'react';
