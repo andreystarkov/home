@@ -65,6 +65,7 @@
     "react-redux": "^4.4.5",
     "react-toolbox": "^0.16.2",
     "redux": "^3.5.2",
+    "reflux": "^0.4.1",
     "s3": "^4.4.0",
     "style-loader": "^0.13.1",
     "stylelint": "^6.4.1",

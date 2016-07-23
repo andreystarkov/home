@@ -2,17 +2,24 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:01:23
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-22 17:07:37
+* @Last Modified time: 2016-07-23 18:57:37
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Reflux from 'reflux';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Container from 'muicss/lib/react/container';
 import ClientLogos from '../icons/clients';
 import BackgroundVideo from '../elements/backgroundVideo';
+import PortfolioStore from '../stores/portfolio';
 
 class Portfolio extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {foo:'bar'}; // <- stays usable, so normal state usage can still happen
+      this.store = PortfolioStore // <- the only thing needed to tie the store into this component
+  }
   componentDidMount(){
     var figure = $(".background-video").hover( hoverVideo, hideVideo );
     function hoverVideo(e) {
@@ -25,29 +32,29 @@ class Portfolio extends React.Component {
     }
   }
   render(){
+    console.log('Portfolio: ', this.store.data);
     var xs = 12, md = 6, lg = 6;
+
+    var output = this.store.data.map(function(the,key){
+      console.log(the);
+        return(
+          <Col xs={xs} md={md} lg={lg} key={key}>
+            <BackgroundVideo
+            video={the.video}
+            name={the.name}
+            description={the.description}
+            live={the.live}
+            github={the.github}
+            acticle={the.article} />
+          </Col>
+        )
+    });
+
     return(
     <div className="seamless-grid">
       <Container fluid={{true}}>
         <Row>
-          <Col xs={xs} md={md} lg={lg}>
-            <BackgroundVideo video="quickly" link="https://github.com/andreystarkov/quickly" />
-          </Col>
-          <Col xs={xs} md={md} lg={lg}>
-            <BackgroundVideo video="m-restorator" link="http://m-restorator.ru/" />
-          </Col>
-          <Col xs={xs} md={md} lg={lg}>
-            <BackgroundVideo video="kb" link="http://kirovskiebani.ru/" />
-          </Col>
-          <Col xs={xs} md={md} lg={lg}>
-            <BackgroundVideo video="fm" link="http://finchmovingservices.com/" />
-          </Col>
-          <Col xs={xs} md={md} lg={lg}>
-            <BackgroundVideo video="ops" link="http://orenops.ru/"/>
-          </Col>
-          <Col xs={xs} md={md} lg={lg}>
-            <BackgroundVideo video="challenge" link="https://github.com/andreystarkov/challenge" />
-          </Col>
+          {output}
         </Row>
       </Container>
     </div>
