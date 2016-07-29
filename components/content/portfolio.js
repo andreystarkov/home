@@ -1,8 +1,8 @@
-/*
+9999999999/*
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:01:23
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-23 18:57:37
+* @Last Modified time: 2016-07-29 12:49:03
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -17,8 +17,8 @@ import PortfolioStore from '../stores/portfolio';
 class Portfolio extends React.Component {
   constructor(props) {
       super(props);
-      this.state = {foo:'bar'}; // <- stays usable, so normal state usage can still happen
-      this.store = PortfolioStore // <- the only thing needed to tie the store into this component
+      this.state = {};
+      this.store = PortfolioStore
   }
   componentDidMount(){
     var figure = $(".background-video").hover( hoverVideo, hideVideo );
@@ -45,7 +45,7 @@ class Portfolio extends React.Component {
             description={the.description}
             live={the.live}
             github={the.github}
-            acticle={the.article} />
+            acticle={the.article} unique={key} />
           </Col>
         )
     });

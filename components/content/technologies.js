@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:04:11
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-22 17:07:33
+* @Last Modified time: 2016-07-29 13:13:09
 */
 
 import React from 'react';
@@ -14,7 +14,7 @@ import Container from 'muicss/lib/react/container';
 
 class Technologies extends React.Component {
   render(){
-      var xs = 4, md = 2, lg = 2;
+      var xs = 4, md = 1, lg = 1;
       return(
           <Container className="the-known">
             <Row>
@@ -33,7 +33,7 @@ class Technologies extends React.Component {
                   <Icons icon="jquery" />
                 </div>
               </Col>
-{/*              <Col xs={xs} md={md} lg={lg}>
+             <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
                   <Icons icon="html5" />
                 </div>
@@ -42,7 +42,7 @@ class Technologies extends React.Component {
                 <div className="known-tech">
                   <Icons icon="css3" />
                 </div>
-              </Col>*/}
+              </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
                   <Icons icon="sass" />
@@ -85,21 +85,21 @@ class Technologies extends React.Component {
                   <Icons icon="git" />
                 </div>
               </Col>
-{/*              <Col xs={xs} md={md} lg={lg}>
+              <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
                   <Icons icon="photoshop" />
                 </div>
-              </Col>*/}
+              </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
                   <Icons icon="linux-detail" />
                 </div>
               </Col>
-{/*              <Col xs={xs} md={md} lg={lg}>
+              <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
                   <Icons icon="mysql" />
                 </div>
-              </Col>*/}
+              </Col>
             </Row>
           </Container>
       )

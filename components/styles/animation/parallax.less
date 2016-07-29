@@ -1,0 +1,171 @@
+
+@easingOne: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+@easingTwo: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+@easingThree: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@easingFour: cubic-bezier(0.175, 0.885, 0.320, 1);
+
+@defaultDuration: 0.5s;
+
+@easingOne: cubic-bezier(.17,.67,.59,-0.35);
+
+ @keyframes hellDash {
+    0% {
+      stroke: fade(mix(#1620e0,#666,50%),50%);
+      stroke-dashoffset: -100;
+      stroke-dasharray: 155 506;
+      opacity:0.1;
+      animation-timing-function: cubic-bezier(0.3,.21,0.2,.45);
+    }
+    15% {
+      opacity:0.5;
+      stroke-dasharray: 145 300;
+      stroke-dashoffset: 106;
+
+      animation-timing-function: cubic-bezier(1,.26,0,.75);
+      opacity:1;
+    }
+    42% {
+      opacity:0.7;
+      stroke-dasharray: 500 306;
+      stroke-dashoffset: 206;
+      stroke: rgba(255,255,255,0.3);
+      animation-timing-function: cubic-bezier(1,.61,0.7,.85);
+    }
+
+    49.999% {
+      opacity:0.8;
+      stroke-dasharray: 4255 806;
+      stroke-dashoffset: 700;
+      animation-timing-function: cubic-bezier(0.8,.41,0.6,.75);
+      stroke: rgba(0,0,0,0.3);
+    }
+
+    75%{
+      animation-timing-function: cubic-bezier(0.5,.31,0.5,.55);
+      opacity:1;
+      stroke-dasharray: 55 206;
+      stroke-dashoffset: 56;
+      stroke: rgba(255,255,255,0.5);
+       opacity:1;
+    }
+    100% {
+      stroke: rgba(255,255,255,0.3);
+      stroke-dashoffset: -100;
+      stroke-dasharray: 155 506;
+      opacity:0.1;
+      animation-timing-function: cubic-bezier(0.3,.21,0.2,.45);
+    }
+  }
+
+
+#as-logo {
+  .the-circle {
+    transition: all 0.3s ease-in-out;
+    animation-timing-function:cubic-bezier(1,.24,.63,1);
+    animation-fill-mode:forwards;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .first {
+
+  }
+
+  .path-top-angle {
+    animation-delay:0.5s;
+    transition: all 0.3s ease-in-out;
+    animation-timing-function:cubic-bezier(1,.44,.23,1);
+    animation-fill-mode:forwards;
+    animation: hellDash @easingTwo 8s infinite;
+    stroke-width:4px;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .path-top-fill {
+    animation-delay:1s;
+    transition: all 0.3s ease-in-out;
+    animation-timing-function:cubic-bezier(1,.24,.63,1);
+    animation-fill-mode:forwards;
+    animation: hellDash @easingTwo 8s infinite reverse;
+    stroke-width:4px;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .path-bottom-fill {
+    animation-delay:1.5s;
+    animation-fill-mode:forwards;
+    animation:hellDash @easingTwo 8s infinite;
+    stroke-width:4px;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .path-bottom-angle {
+    animation-delay:2s;
+    animation-timing-function:@easingFour;
+    animation-fill-mode:forwards;
+    stroke-width:4px;
+    animation:hellDash @easingTwo 8s infinite reverse;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+
+}
+
+@keyframes theDashes {
+  10% {
+    stroke-dashoffset: 10;
+    stroke-dasharray: -50;
+    stroke-color: rgba(0,0,0,0.15);
+    stroke-width:3px;
+  }
+  35% {
+    stroke-dashoffset: 210;
+    stroke-dasharray: -150;
+    stroke-width:4px;
+  }
+  50% {
+    stroke-dashoffset: 110;
+    stroke-dasharray: 20;
+    stroke-width:2px;
+  }
+  75% {
+    stroke-dashoffset: -1300;
+    stroke-dasharray: 500;
+    stroke-width:3px;
+  }
+}
+
+@-webkit-keyframes slowDance {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: @easingOne;
+    animation-timing-function: @easingOne;
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.1, .1, .1);
+    transform: scale3d(.3, .3, .3);
+  }
+  15% {
+    opacity: 0.2;
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  45% {
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale3d(.5, .5, .5);
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+    -webkit-transform: scale3d(.1, .1, .1);
+    transform: scale3d(.3, .3, .3);
+  }
+}
