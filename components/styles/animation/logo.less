@@ -1,0 +1,191 @@
+@easingOne: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+@easingTwo: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+@easingThree: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@easingFour: cubic-bezier(0.175, 0.885, 0.320, 1);
+
+@keyframes drawLine {
+  0% {
+    stroke-dasharray: 1000;
+    stroke: #666;
+    stroke-width: 3px;
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    animation-timing-function: cubic-bezier(1,.36,0,.75);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLineCompleted {
+  0% {
+
+  }
+  100% {
+    opacity: 1;
+    fill: #fff;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeTo {
+  0% {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stroke-linecap: round;
+    stroke-width: 4px;
+    stroke: #666;
+    fill: transparent;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity:1;
+  }
+}
+
+.completedFill(@color, @name){
+  @keyframes @name {
+    to {
+      fill: @color;
+      stroke: fade(#000,0%);
+    }
+  }
+}
+
+@logoTopFill: @colorBlue;
+@logoTopAngleFill:darken(desaturate(@logoTopFill,10%),10%);
+
+@logoBottomFill: @colorRed;
+@logoBottomAngleFill:darken(desaturate(@logoBottomFill,30%),30%);
+
+.completedFill (@logoBottomFill, 'pathBottomFill');
+.completedFill (@logoBottomAngleFill, 'pathBottomAngleFill');
+.completedFill (@logoTopFill, 'pathTopFill');
+.completedFill (@logoTopAngleFill, 'pathTopAngleFill');
+
+.path-top-angle {
+    animation: drawLine 2.5s 0.5s linear, pathTopAngleFill 2.5s 1s @easingFour forwards;
+}
+
+.path-top-fill {
+    animation: drawLine 1.5s 1s @easingFour, pathTopFill 2.5s 1.5s @easingFour forwards;
+}
+
+.path-bottom-fill {
+    animation: drawLine 1.5s 1.5s @easingFour, pathBottomFill 1.5s 2s linear forwards;
+}
+
+.path-bottom-angle {
+  animation: drawLine 2.5s 2s linear, pathBottomAngleFill 2.5s 2.5s linear forwards;
+}
+
+.draw-svg {
+   path, circle {
+/*    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    stroke-linecap: round;
+    stroke-width: 4px;
+    stroke: #666;*/
+   }
+   path {
+    animation: drawLine 2.5s 2s linear forwards;
+   }
+}
+
+.known-tech svg {
+   path, circle {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+   }
+   path {
+    stroke-linecap: round;
+    stroke: #666;
+    stroke-width: 1px;
+   // fill: transparent;
+    animation: fadeTo 2.5s linear;
+
+   }
+}
+
+.draw-svg-animation {
+  animation: drawLine 2.5s 2s linear forwards;
+}
+
+#the-logo {
+   margin: 2rem auto;
+   path, circle {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+   }
+   path {
+    fill: transparent;
+   }
+   circle {
+    fill: transparent;
+//    animation-delay:1s;
+    animation-iteration-count: 1;
+    animation: drawLineCompleted 4.2s 1.4s linear forwards;
+  }
+  path {
+    stroke: #666;
+    stroke-width: 2px;
+    fill: transparent;
+   }
+}
+
+/*  .the-circle {
+    transition: all 0.3s ease-in-out;
+    animation-timing-function:cubic-bezier(1,.24,.63,1);
+    animation-fill-mode:forwards;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .first {
+
+  }
+
+  .path-top-angle {
+    animation-delay:0.5s;
+    transition: all 0.3s ease-in-out;
+    animation-timing-function:cubic-bezier(1,.44,.23,1);
+    animation-fill-mode:forwards;
+    animation: hellDash @easingTwo 8s infinite;
+    stroke-width:4px;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .path-top-fill {
+    animation-delay:1s;
+    transition: all 0.3s ease-in-out;
+    animation-timing-function:cubic-bezier(1,.24,.63,1);
+    animation-fill-mode:forwards;
+    animation: hellDash @easingTwo 8s infinite reverse;
+    stroke-width:4px;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .path-bottom-fill {
+    animation-delay:1.5s;
+    animation-fill-mode:forwards;
+    animation:hellDash @easingTwo 8s infinite;
+    stroke-width:4px;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }
+
+  .path-bottom-angle {
+    animation-delay:2s;
+    animation-timing-function:@easingFour;
+    animation-fill-mode:forwards;
+    stroke-width:4px;
+    animation:hellDash @easingTwo 8s infinite reverse;
+    stroke:rgba(0,0,0,0.4);
+    animation-iteration-count: infinite;
+  }*/
+

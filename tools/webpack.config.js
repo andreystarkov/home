@@ -10,11 +10,6 @@ const isVerbose = process.argv.includes('--verbose') || process.argv.includes('-
 
 var LessPluginCleanCSS = require('less-plugin-clean-css');
 
-/**
- * Webpack configuration (core/main.js => build/bundle.js)
- * http://webpack.github.io/docs/configuration.html
- */
-
 const config = {
 
   // The base directory

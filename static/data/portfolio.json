@@ -8,7 +8,7 @@
       ],
       "github": "https://github.com/andreystarkov/quickly",
       "live": "http://quickly.andrestarkov.ru/",
-      "article": ""
+      "article": "Разработка изоморфного веб-приложения (React/Reflux) торговой площадки и системы бронирования для ресторанов. Разработка веб-дизайна и UI-концепции сервиса (Photoshop). Верстка адаптивного шаблона по макетам. Частичное использование принципов Material Design. SVG/CSS3 анимации связанные с UI/UX-логикой. Адаптивная верстка: мобильная версия приложения с выпадающими Off-canvas меню. Оптимизация быстродействия, асинхронного получения, хранения, фильтрации и порционного вывод большого количества данных, в условиях ситуации с не адаптированным к веб-приложениям API (изначально разрабатывалось для нативных приложений). Полноценный роутинг в условиях одностраничного приложения (react-router), система хранения, вывода и логики корзины полностью на стороне клиента."
    },
    {
       "name":"М-Ресторатор",
@@ -40,6 +40,21 @@
       "video":"fm",
       "github": "https://github.com/andreystarkov/fm-responsive-template",
       "live": "http://finchmovingservices.com",
+      "article": ""
+   },
+   {
+      "name":"Fashion Tights",
+      "description": "Магазин на Opencart",
+      "video":"ft-shop",
+      "github": "https://github.com/andreystarkov/ft-shop",
+      "live": "http:/ft-shop.ru/",
+      "article": ""
+   },
+   {
+      "name":"Весенний квартал",
+      "description": "Лендинг",
+      "video":"vesna",
+      "github": "https://github.com/andreystarkov/vesna",
       "article": ""
    },
    {

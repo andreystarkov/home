@@ -5,44 +5,73 @@ import Technologies from '../content/technologies.js';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Container from 'muicss/lib/react/container';
+import anime from 'animejs';
 
-class SVGParallax extends React.Component {
-
-  render(){
-    return(
-      <div className="parallax">
-        <div className="parallax_layer parallax_layer-back">
-          <div className="title"><svg version="1" xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><path fill="#9DB2DC" d="M-1 105v296h800v-291s-42.25-8-50.25-12-33.875-14-37.875-15-15.938 7-23.938 11l-39.969 18s-18.984-9-25.984-10-31.992-18-36.992-17l-19.996 7s-10.998-9-17.998-8l-44.999-9s-17.999 20-20.999 20-27-4-41-8l-50-19-30 15s-36 21-40 21-40-11-44-13l-27-27s-24 14-30 16l-33-1s-32-7-52-4-57 19-62 20-33.25-6-37.25-10l-34.75 20z"/></svg></div>
-        </div>
-        <div className="parallax_layer parallax_layer-middle">
-          <div className="title"><svg version="1" xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><path fill="#6889BF" d="M0 144v256h800v-272s-78-25-97-25-101-3-121-10-70-14-82-18l-12-4s-15 28-50 38-76 1-93-4-61-27-66-23-35 27-53 29-64-10-70-10-43 18-58 18-54-13-61-12l-37 18v19z"/></svg></div>
-        </div>
-        <div className="parallax_layer parallax_layer-front">
-          <div className="title"><svg version="1" xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><path fill="#2B4C80" d="M0 145v255h800v-274c-204-10-122-43-263-3s-158-2-189-3-84-19-88-19-46 23-58 26-51-2-56-3-28 19-37 15-51-18-64-15l-45 21z"/></svg></div>
-        </div>
-          <div className="cover">
-        </div>
-      </div>
-    )
-  }
+export function randomInt(min, max) {
+  var i = (Math.random() * 32768) >>> 0;
+  return (i % (min - max)) + min;
 }
 
 class Header extends React.Component {
 
+  componentDidMount() {
+    anime({
+      targets: '#mv',
+      translateX: '53rem',
+      duration: 3000,
+      translateY: {
+        value: '11rem',
+        delay: function(el, index) {
+          var delay = randomInt(100, 600);
+          console.log('anime.js: delay = ', delay);
+          return delay;
+        },
+        easing: 'easeInOutQuad',
+        duration: 900
+      },
+      rotateY: {
+        value: 180,
+        transformOrigin: '0% 50%',
+        duration: 300,
+        delay: 200,
+        easing: 'easeInOutQuad'
+      },
+      scale: {
+        value: 2,
+        delay: 150,
+        duration: 850,
+        easing: 'easeInOutExpo',
+      },
+      loop: true,
+      direction: 'alternate'
+    });
+  }
+
   render() {
+    var elStyles = {
+      width: '3em',
+      position: 'absolute',
+      left: '2rem',
+      borderRadius: '500px',
+      height: '3em',
+      backgroundColor: 'rgba(255,255,255,0.2)'
+    };
     return (
       <header className="the-header align-center">
+      <div className="absolute-wrapper">
         <div className="container">
           <Row>
             <Col md="12">
               <div className="the-logo">
-                <SVGLogo />
+                <div id="mv" style={elStyles}></div>
+                <SVGLogo id="the-logo" />
               </div>
             </Col>
           </Row>
           <Technologies />
 
         </div>
+      </div>
       </header>
     );
   }

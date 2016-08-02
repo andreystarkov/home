@@ -1,8 +1,8 @@
-9999999999/*
+/*
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:01:23
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-29 12:49:03
+* @Last Modified time: 2016-08-02 11:53:28
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -45,7 +45,7 @@ class Portfolio extends React.Component {
             description={the.description}
             live={the.live}
             github={the.github}
-            acticle={the.article} unique={key} />
+            article={the.article} unique={key} />
           </Col>
         )
     });

@@ -7,7 +7,7 @@
 @import 'core/typebase';
 @import 'animation/svg-icons';
 @import 'elements/grid';
-@import 'animation/parallax';
+@import 'animation/logo';
 
 @colorRed: #C63931; //#DD1C1A; // #c83737;
 @colorBlue: #306A99; //#214478;
@@ -79,6 +79,8 @@ body {
     }
 
     &.clicked {
+        overflow-x:hidden;
+        overflow-y:scroll;
         .more {display: block;}
         opacity:1;
         visibility: visible;
@@ -270,7 +272,13 @@ section {
   text-align:center;
 }
 
+.absolute-wrapper {
+  position:relative;
+  z-index:2;
+}
+
 .the-header {
+   position:relative;
   .description {
     h1,h2,h3 {
       font-weight: 200;
@@ -312,8 +320,8 @@ section {
     border-radius: 200px;
     margin: 2em auto;
     max-width: 210px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
   svg {
     width:100%;
   }
 }
+

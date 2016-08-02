@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:04:11
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-29 13:13:09
+* @Last Modified time: 2016-08-02 13:51:02
 */
 
 import React from 'react';
@@ -11,8 +11,10 @@ import Icons from '../icons/devicons.js';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import Container from 'muicss/lib/react/container';
+import anime from 'animejs';
 
 class Technologies extends React.Component {
+
   render(){
       var xs = 4, md = 1, lg = 1;
       return(
@@ -20,27 +22,17 @@ class Technologies extends React.Component {
             <Row>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="react" />
-                </div>
-              </Col>
-              <Col xs={xs} md={md} lg={lg}>
-                <div className="known-tech">
                   <Icons icon="javascript" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="jquery" />
-                </div>
-              </Col>
-             <Col xs={xs} md={md} lg={lg}>
-                <div className="known-tech">
-                  <Icons icon="html5" />
+                  <Icons icon="react" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="css3" />
+                  <Icons icon="webkit" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
@@ -58,26 +50,14 @@ class Technologies extends React.Component {
                   <Icons icon="wordpress" />
                 </div>
               </Col>
-            </Row>
-            <Row className="known">
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="node" />
+                  <Icons icon="jquery" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="php" />
-                </div>
-              </Col>
-              <Col xs={xs} md={md} lg={lg}>
-                <div className="known-tech">
-                  <Icons icon="webkit" />
-                </div>
-              </Col>
-              <Col xs={xs} md={md} lg={lg}>
-                <div className="known-tech">
-                  <Icons icon="gulp" />
+                  <Icons icon="bootstrap" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
@@ -87,20 +67,51 @@ class Technologies extends React.Component {
               </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
+                  <Icons icon="php" />
+                </div>
+              </Col>
+              <Col xs={xs} md={md} lg={lg}>
+                <div className="known-tech">
                   <Icons icon="photoshop" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="linux-detail" />
+                  <Icons icon="node" />
+                </div>
+              </Col>
+            </Row>
+
+{/*              <Col xs={xs} md={md} lg={lg}>
+                <div className="known-tech">
+                  <Icons icon="node" />
+                </div>
+              </Col>*/}
+{/*             <Col xs={xs} md={md} lg={lg}>
+                <div className="known-tech">
+                  <Icons icon="html5" />
                 </div>
               </Col>
               <Col xs={xs} md={md} lg={lg}>
                 <div className="known-tech">
-                  <Icons icon="mysql" />
+                  <Icons icon="css3" />
                 </div>
               </Col>
-            </Row>
+              <Col xs={xs} md={md} lg={lg}>
+                <div className="known-tech">
+                  <Icons icon="gulp" />
+                </div>
+              </Col>
+              <Col xs={xs} md={md} lg={lg}>
+                <div className="known-tech">
+                  <Icons icon="git-plain" />
+                </div>
+              </Col>
+            */}
+
+
+
+
           </Container>
       )
   }
