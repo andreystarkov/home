@@ -30,9 +30,6 @@ class Layout extends React.Component {
           <Header />
         </div>
         </section>
-{/*        <section className="skills">
-          <SkillsGrid />
-        </section>*/}
         <section className="works">
           <Portfolio />
         </section>

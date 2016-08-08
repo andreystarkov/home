@@ -1,9 +1,10 @@
 /*
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:01:23
-* @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-08-02 11:53:28
+* @Last Modified by:   User
+* @Last Modified time: 2016-08-05 16:23:26
 */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Reflux from 'reflux';
@@ -23,12 +24,14 @@ class Portfolio extends React.Component {
   componentDidMount(){
     var figure = $(".background-video").hover( hoverVideo, hideVideo );
     function hoverVideo(e) {
-       // $('.video-overlay', this).animate({scale:3, opacity:0});
-        $('video', this).get(0).play();
+        if( $('video', this).length ){
+          $('video', this).get(0).play();
+        }
     }
     function hideVideo(e) {
-      //  $('.video-overlay', this).animate({scale:1, opacity:1});
-        $('video', this).get(0).pause();
+        if( $('video', this).length ){
+          $('video', this).get(0).play();
+        }
     }
   }
   render(){
@@ -40,6 +43,7 @@ class Portfolio extends React.Component {
         return(
           <Col xs={xs} md={md} lg={lg} key={key}>
             <BackgroundVideo
+            folder={the.folder}
             video={the.video}
             name={the.name}
             description={the.description}

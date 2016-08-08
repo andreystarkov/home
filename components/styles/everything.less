@@ -62,9 +62,12 @@ body {
     }
   }
 }
+
 .pf-item {
+    height:525px;
+
     position:relative;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.25s linear;
 
     .click-overlay {
       display:none;
@@ -74,14 +77,27 @@ body {
       transform: translateY(-150px);
     }
 
+    .hover-overlay {
+      position:absolute;
+      left:0; top:0;
+      bottom:0; right:0;
+      width:100%; height:100%;
+      z-index:3;
+      background:fade(#000,20%);
+    }
+
     .more {
       display:none;
     }
 
     &.clicked {
+        height:100%;
+        padding:1rem;
         overflow-x:hidden;
         overflow-y:scroll;
-        .more {display: block;}
+        .more {
+          display: block
+        }
         opacity:1;
         visibility: visible;
         position:fixed;
@@ -97,6 +113,12 @@ body {
           opacity:1;
           transform-origin: top center;
           transform: translateY(0px) rotateY(-60deg);
+        }
+        .hover-overlay {
+          display:none;
+        }
+        .picture-overlay {
+          display:none;
         }
         .the-video {
            width: 80%;
@@ -128,6 +150,7 @@ body {
 
 .the-video {
   width:100%;
+  min-height:100%;
 }
 
 .s-link {
@@ -200,14 +223,37 @@ body {
   }
   position:relative;
   overflow:hidden;
+  transform-style: preserve-3d;
+  perspective:1000px;
   &:hover {
     .video-overlay {
       opacity:0;
-      transform: scale(5);
+
+    }
+    .hover-overlay {
+      opacity:0;
+      transform-origin: center center;
+    }
+    .picture-overlay {
+      transform: rotateX(7deg) perspective(200px) scale(1.03) translateY(-10px);
     }
   }
+  .hover-overlay {
+    transition: 0.25s ease-in-out all;
+  }
+  .picture-overlay {
+    img {
+      width:100%;
+    }
+    transition: 0.35s linear all;
+/*    transform-origin: 100% 0%;*/
+    perspective-origin: center top;
+
+  }
   .video-overlay {
-    transition: 0.4s ease-in-out all;
+    transition: all 0.3s ease-out;
+  }
+  .video-overlay, .picture-overlay {
     position:absolute;
     width:100%;
     height:100%;
@@ -277,8 +323,13 @@ section {
   z-index:2;
 }
 
+.top-header {
+   overflow:hidden;
+}
+
 .the-header {
    position:relative;
+
   .description {
     h1,h2,h3 {
       font-weight: 200;

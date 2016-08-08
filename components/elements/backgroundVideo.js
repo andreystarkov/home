@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 14:49:54
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-08-02 14:41:21
+* @Last Modified time: 2016-08-08 18:49:27
 */
 
 import React from 'react';
@@ -18,6 +18,42 @@ import Container from 'muicss/lib/react/container';
 function openInNewTab(url) {
   var win = window.open(url, '_blank');
 
+}
+
+function aniFullscreen(what) {
+    var imgtodrag = $(what);
+    if (imgtodrag) {
+        var imgclone = imgtodrag.clone()
+        .addClass('notransition')
+        .offset({
+            top: imgtodrag.offset().top,
+            left: imgtodrag.offset().left
+        })
+        .css({
+            'opacity': '0.6',
+            'position': 'absolute',
+            'height': imgtodrag.outerHeight(),
+            'width': imgtodrag.outerWidth(),
+            'z-index': '8'
+        })
+        .appendTo($('body'))
+        .velocity({
+            'top': cart.offset().top + 10,
+            'left': cart.offset().left + 10,
+            'width': 75,
+            'height': 75,
+        }, 400, "easeOutSine", function() {
+            // what?
+        });
+
+
+        imgclone.animate({
+            'width': 0,
+            'height': 0
+        }, function() {
+            $(this).detach()
+        });
+    }
 }
 
 class BackgroundVideo extends React.Component {
@@ -37,34 +73,45 @@ class BackgroundVideo extends React.Component {
   componentDidUpdate(){
     if( this.state.clicked ) {
       $('body').css({'overflow-y': 'hidden'});
-      classNames += ' clicked';
     } else {
       $('body').css({'overflow-y': 'scroll'});
     }
   }
   _postVideo(){
-    var path = settings.videos.url+this.props.video+'/'+this.props.video;
-    var poster = path+'.jpg';
-    console.log('_postVideo: ', path, poster);
+    console.log('_postVideo props:', this.props);
+
     if( this.props.video ){
+
+      var path = settings.videos.url+this.props.video+'/'+this.props.video;
+      var poster = path+'.jpg';
+
       return(
-      <div className="video-container">
-        <div className="video-overlay" style={{backgroundImage: 'url('+poster+')'}}></div>
-        <video className="the-video" loop poster={poster}>
-          <source src={path+'.m4v'} type='video/mp4; codecs=avc1.42E01E, mp4a.40.2"' />
-          <source src={path+'.webm'} type='video/webm; codecs="vp8, vorbis"' />
-          <source src={path+'.ogv'} type="video/ogg" />
-          <source src={path+'.mp4'} />
-        </video>
-      </div>
+        <div className="video-container">
+          <div className="video-overlay" style={{backgroundImage: 'url('+poster+')'}}></div>
+          <video className="the-video" loop poster={poster}>
+            <source src={path+'.m4v'} type='video/mp4; codecs=avc1.42E01E, mp4a.40.2"' />
+            <source src={path+'.webm'} type='video/webm; codecs="vp8, vorbis"' />
+            <source src={path+'.ogv'} type="video/ogg" />
+            <source src={path+'.mp4'} />
+          </video>
+        </div>
       )
     } else {
+
+      var path = settings.videos.url+this.props.folder+'/'+this.props.folder;
+      var poster = path+'.jpg';
+
       return(
-        <div className="video-overlay" style={{backgroundImage: 'url('+poster+')'}}></div>
+        <div className="picture-overlay">
+          <img src={poster} />
+        </div>
       )
+
     }
   }
+
   _postArticle(){
+    var poster = settings.videos.url+this.props.folder+'/'+this.props.folder+".jpg";
     if(this.props.article){
       return(
         <div className="pf-article">
@@ -75,6 +122,7 @@ class BackgroundVideo extends React.Component {
       )
     }
   }
+
   _postDescription(){
     return (
       <div className="more">

@@ -69,7 +69,7 @@
 .path-top-angle {
     animation: drawLine 2.5s 0.5s linear, pathTopAngleFill 2.5s 1s @easingFour forwards;
 }
-
+// , theLogoOpacity 6s 4s linear infinite reverse
 .path-top-fill {
     animation: drawLine 1.5s 1s @easingFour, pathTopFill 2.5s 1.5s @easingFour forwards;
 }
@@ -108,6 +108,25 @@
     animation: fadeTo 2.5s linear;
 
    }
+}
+
+@keyframes theLogoOpacity {
+  0% {
+    opacity:1;
+  }
+  40% {
+    opacity:0.8;
+
+  }
+  50% {
+    opacity:0.3;
+  }
+  70% {
+    opacity:0.6;
+  }
+  100% {
+    opacity:1;
+  }
 }
 
 .draw-svg-animation {

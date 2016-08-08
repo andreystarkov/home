@@ -1,8 +1,8 @@
 /*
 * @Author: Andrey Starkov
 * @Date:   2016-07-22 11:41:33
-* @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-07-29 13:08:16
+* @Last Modified by:   User
+* @Last Modified time: 2016-08-05 16:27:02
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -30,7 +30,7 @@ class ContactForm extends React.Component {
 
 class Contact extends React.Component {
   render() {
-    var xs = 12, md = 6, lg = 6;
+    var xs = 12, md = 12, lg = 12;
     return (
       <div className="contact-section">
         <Container>
@@ -46,12 +46,12 @@ class Contact extends React.Component {
                 <i className="s-icon fa fa-skype" aria-hidden="true"></i>
               </a>
               <div className="the-phone">
-                <span>+7 961 947 92 28</span>
+                <span>im@andreystarkov.ru</span>
               </div>
             </Col>
-            <Col xs={xs} md={md} lg={lg}>
+{/*            <Col xs={xs} md={md} lg={lg}>
               <ContactForm />
-            </Col>
+            </Col>*/}
           </Row>
         </Container>
       </div>
