@@ -1,8 +1,8 @@
 /*
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 11:01:23
-* @Last Modified by:   User
-* @Last Modified time: 2016-08-05 16:23:26
+* @Last Modified by:   Andrey Starkov
+* @Last Modified time: 2016-08-08 18:58:37
 */
 
 import React from 'react';
@@ -22,24 +22,14 @@ class Portfolio extends React.Component {
       this.store = PortfolioStore
   }
   componentDidMount(){
-    var figure = $(".background-video").hover( hoverVideo, hideVideo );
-    function hoverVideo(e) {
-        if( $('video', this).length ){
-          $('video', this).get(0).play();
-        }
-    }
-    function hideVideo(e) {
-        if( $('video', this).length ){
-          $('video', this).get(0).play();
-        }
-    }
+    // something
   }
   render(){
     console.log('Portfolio: ', this.store.data);
     var xs = 12, md = 6, lg = 6;
 
     var output = this.store.data.map(function(the,key){
-      console.log(the);
+      console.log('!!!', key);
         return(
           <Col xs={xs} md={md} lg={lg} key={key}>
             <BackgroundVideo

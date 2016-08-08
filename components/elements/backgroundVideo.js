@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 14:49:54
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-08-08 18:49:27
+* @Last Modified time: 2016-08-08 19:02:53
 */
 
 import React from 'react';
@@ -77,6 +77,21 @@ class BackgroundVideo extends React.Component {
       $('body').css({'overflow-y': 'scroll'});
     }
   }
+  componentDidMount(){
+    var figure = $('#item-'+this.props.unique).hover( hoverVideo, hideVideo );
+    function hoverVideo(e) {
+        if( $('video', this).length ){
+          $('video', this).show();
+          $('video', this).get(0).play();
+        }
+    }
+    function hideVideo(e) {
+        if( $('video', this).length ){
+          $('video', this).hide();
+          $('video', this).get(0).pause();
+        }
+    }
+  }
   _postVideo(){
     console.log('_postVideo props:', this.props);
 
@@ -88,7 +103,7 @@ class BackgroundVideo extends React.Component {
       return(
         <div className="video-container">
           <div className="video-overlay" style={{backgroundImage: 'url('+poster+')'}}></div>
-          <video className="the-video" loop poster={poster}>
+          <video id={'video-'+this.props.unique} className="the-video" loop poster={poster}>
             <source src={path+'.m4v'} type='video/mp4; codecs=avc1.42E01E, mp4a.40.2"' />
             <source src={path+'.webm'} type='video/webm; codecs="vp8, vorbis"' />
             <source src={path+'.ogv'} type="video/ogg" />
