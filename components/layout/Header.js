@@ -1,17 +1,19 @@
-import React from 'react';
-import Navigation from './Navigation';
-import SVGLogo from '../svg/logo.js';
-import Technologies from '../content/technologies.js';
-import Row from 'muicss/lib/react/row';
-import Col from 'muicss/lib/react/col';
-import Container from 'muicss/lib/react/container';
-import anime from 'animejs';
+import React from 'react'
+import Navigation from './Navigation'
+import SVGLogo from '../svg/logo'
+import ASLogo from '../svg/asLogo'
+import Technologies from '../content/technologies'
+import Row from 'muicss/lib/react/row'
+import Col from 'muicss/lib/react/col'
+import Container from 'muicss/lib/react/container'
+/*import anime from 'animejs'
+import initAniEffects from '../animation/initAniEffects'
+import aniEffects from '../animation/aniEffects'*/
 
 export function randomInt(min, max) {
   var i = (Math.random() * 32768) >>> 0;
   return (i % (min - max)) + min;
 }
-
 
 function animationTests(){
   anime({
@@ -49,7 +51,7 @@ class Header extends React.Component {
 
   componentDidMount() {
     // animationTests()
-
+    // initAniEffects();
   }
 
   render() {
@@ -70,7 +72,8 @@ class Header extends React.Component {
             <Col md="12">
               <div className="the-logo">
                 {/*<div id="mv" style={elStyles}></div>*/}
-                <SVGLogo id="the-logo" />
+               {/* <SVGLogo id="the-logo" />*/}
+               <ASLogo />
               </div>
             </Col>
           </Row>

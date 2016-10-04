@@ -8,7 +8,7 @@
         "react", "less", "jquery", "gulp", "nodejs"
       ],
       "github": "https://github.com/andreystarkov/quickly",
-      "live": "http://quickly.andrestarkov.ru/"
+      "live": "http://quickly.andreystarkov.ru/"
    },
    {
       "name":"М-Ресторатор",

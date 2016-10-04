@@ -46,7 +46,7 @@ class Contact extends React.Component {
                 <i className="s-icon fa fa-skype" aria-hidden="true"></i>
               </a>
               <div className="the-phone">
-                <span>im@andreystarkov.ru</span>
+                <span>im@andreystarkov.ru | skype: andrey-starkov</span>
               </div>
             </Col>
 {/*            <Col xs={xs} md={md} lg={lg}>
