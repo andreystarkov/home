@@ -1,19 +1,20 @@
 [
    {
       "name":"Квикли",
-      "description": "Изоморфное веб-приложение на React/Reflux",
+      "description": "SPA на React/Reflux",
       "video":"quickly",
+      "folder":"quickly",
       "technologies": [
         "react", "less", "jquery", "gulp", "nodejs"
       ],
       "github": "https://github.com/andreystarkov/quickly",
-      "live": "http://quickly.andrestarkov.ru/",
-      "article": ""
+      "live": "http://quickly.andrestarkov.ru/"
    },
    {
       "name":"М-Ресторатор",
       "description": "Адаптивный сайт на Wordpress",
-      "video":"m-restorator",
+      "video": "m-restorator",
+      "folder": "m-restorator",
       "github": "https://github.com/andreystarkov/m-restorator",
       "live": "http://m-restorator.ru/",
       "article": ""
@@ -21,7 +22,8 @@
    {
       "name":"Кировские бани",
       "description": "Адаптивный сайт на Wordpress",
-      "video":"kb",
+      "folder": "kb",
+      "video": "kb",
       "github": "https://github.com/andreystarkov/kirovskiebani",
       "live": "http://kirovskiebani.ru/",
       "article": ""
@@ -30,24 +32,70 @@
       "name":"Твой вызов",
       "description": "Верстка веб-сервиса по готовым макетам",
       "video":"challenge",
+      "folder":"challenge",
       "github": "https://github.com/andreystarkov/challenge",
       "live": "http://lab.andreystarkov.ru/challenge",
+      "article": ""
+   },
+   {
+      "name":"М-Вкусно",
+      "description": "Система доставки блюд",
+      "folder":"vkusno",
+      "github": "https://github.com/andreystarkov/vkusno",
       "article": ""
    },
    {
       "name":"Finch Moving Services",
       "description": "Адаптивный сайт на Wordpress",
       "video":"fm",
+      "folder":"fm",
       "github": "https://github.com/andreystarkov/fm-responsive-template",
       "live": "http://finchmovingservices.com",
       "article": ""
    },
    {
-      "name":"Твой вызов",
-      "description": "Верстка веб-сервиса по готовым макетам",
-      "video":"challenge",
-      "github": "https://github.com/andreystarkov/challenge",
-      "live": "http://lab.andreystarkov.ru/challenge",
+      "name":"Оренбургский Облпотребсоюз",
+      "description": "Адаптивный шаблон для Wordpress",
+      "video": "ops",
+      "folder": "ops",
+      "github": "https://github.com/andreystarkov/ops-wordpress-template",
+      "live": "http://orenops.ru/",
+      "article": ""
+   },
+   {
+      "name":"Fashion Tights",
+      "description": "Магазин на Opencart",
+      "folder": "ft-shop",
+      "github": "https://github.com/andreystarkov/ft-shop",
+      "live": "http://ft-shop.ru/",
+      "article": ""
+   },
+   {
+      "name":"Тепломастер",
+      "description": "Верстка по макетам на заказ",
+      "folder":"tm",
+      "github": "https://github.com/andreystarkov/teplomaster",
+      "article": ""
+   },
+   {
+      "name":"Весенний квартал",
+      "description": "Лендинг",
+      "folder":"vesna",
+      "github": "https://github.com/andreystarkov/vesna",
+      "article": ""
+   },
+   {
+      "name":"ОазисСтройДекор",
+      "description": "Лендинг",
+      "folder":"trotuar",
+      "github": "",
+      "article": ""
+   },
+   {
+      "name":"Кружка",
+      "description": "Разработка сайта",
+      "folder":"kr",
+      "github": "",
       "article": ""
    }
 ]
