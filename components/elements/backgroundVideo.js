@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-12 14:49:54
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-08-08 20:27:47
+* @Last Modified time: 2016-10-04 10:12:47
 */
 
 import React from 'react';
@@ -72,22 +72,22 @@ class BackgroundVideo extends React.Component {
   }
   componentDidUpdate(){
     if( this.state.clicked ) {
-      $('body').css({'overflow-y': 'hidden'});
+     // $('body').css({'overflow-y': 'hidden'});
     } else {
-      $('body').css({'overflow-y': 'scroll'});
+     // $('body').css({'overflow-y': 'scroll'});
     }
   }
   componentDidMount(){
     var figure = $('#item-'+this.props.unique).hover( hoverVideo, hideVideo );
     function hoverVideo(e) {
         if( $('video', this).length ){
-          $('video', this).show();
+        //  $('video', this).show();
           $('video', this).get(0).play();
         }
     }
     function hideVideo(e) {
         if( $('video', this).length ){
-          $('video', this).hide();
+        //  $('video', this).hide();
           $('video', this).get(0).pause();
         }
     }
@@ -117,8 +117,8 @@ class BackgroundVideo extends React.Component {
       var poster = path+'.jpg';
 
       return(
-        <div className="picture-overlay">
-          <img src={poster} />
+        <div className="picture-overlay" style={{backgroundImage: 'url('+poster+')'}}>
+
         </div>
       )
 
@@ -159,16 +159,20 @@ class BackgroundVideo extends React.Component {
   }
   render(){
 
-    var classNames = 'pf-item background-video';
-    if (this.state.clicked) classNames += ' clicked';
+    var classNames = 'pf-item background-video',
+        addStyles = {}
+
+    if (this.state.clicked) {
+      classNames += ' clicked';
+    }
 
     return(
-    <div className={classNames} id={'item-'+this.props.unique}>
-    <div onClick={this.toggleFn.bind(this)} className="pf-link">
-      <div className="click-overlay" />
-      {this._postVideo()}
-      {this._postDescription()}
-    </div>
+    <div className={classNames} style={addStyles} id={'item-'+this.props.unique}>
+      <div onClick={this.toggleFn.bind(this)} className="pf-link">
+        <div className="click-overlay" />
+        {this._postVideo()}
+        {this._postDescription()}
+      </div>
     </div>
     )
 

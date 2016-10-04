@@ -18,6 +18,10 @@ class SkillsGrid extends React.Component {
 class Layout extends React.Component {
   componentDidMount() {
   //  window.componentHandler.upgradeElement(this.refs.root);
+    var height = $('#video-1').height();
+    console.log(' height ', height);
+
+    $('.background-video').css({ height: height });
   }
   componentWillUnmount() {
  //   window.componentHandler.downgradeElements(this.refs.root);

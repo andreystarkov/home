@@ -2,7 +2,7 @@
 * @Author: Andrey Starkov
 * @Date:   2016-06-01 11:49:16
 * @Last Modified by:   Andrey Starkov
-* @Last Modified time: 2016-08-02 08:28:44
+* @Last Modified time: 2016-10-04 06:37:09
 */
 
 import React from 'react';
@@ -10,7 +10,7 @@ import React from 'react';
 class SVGLogo extends React.Component {
   render(){
     return(
-      <svg className="svg-logo" id={this.props.id || 'as-logo'} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.314 299.315">
+      <svg className="as-logo" id={this.props.id || 'as-logo'} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.314 299.315">
          <circle cx="150" className="the-circle" cy="150" r="148" fill="#fff"  fill-rule="evenodd" />
         <path fill="none" stroke="#eceded" className="first" stroke-width=".216" d="M-128.13-218.994v841.89h595.277v-841.89H-128.13z"/>
         <path fill="#214478" className="path-bottom-fill" fill-rule="evenodd" d="M.868 165.786C.3 160.488 0 155.11 0 149.662 0 92.144 32.472 42.202 80.072 17.15c-3.947 2.837-7.628 6.013-11.04 9.525C53.642 42.595 45.95 62.893 45.95 87.57c0 21.758 7.828 38.74 23.483 50.946 9.288 7.165 21.76 12.604 37.414 16.32l58.51 13.4c23.88 5.57 40 11.74 48.358 18.573 8.358 6.76 12.537 17.44 12.537 32.03 0 14.33-5.573 25.67-16.718 33.9-13.002 9.55-32.372 14.33-58.11 14.33-22.023 0-39.802-4.65-53.333-13.93-16.98-11.68-25.47-29.32-25.47-52.94h-.08v-34.42H.87z"/>
